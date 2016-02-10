@@ -13,7 +13,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 /**
- * A simple XML parser that uses the internal {@link org.xml.sax} API to create a tree of {@link XmlNode} objects.
+ * A simple XML generator that uses the internal {@link org.xml.sax} API to create a tree of {@link XmlNode} objects.
  *
  * @author Graham
  */
@@ -87,7 +87,7 @@ public final class XmlParser {
 	private final XMLReader xmlReader;
 
 	/**
-	 * Creates the XML parser.
+	 * Creates the XML generator.
 	 *
 	 * @throws SAXException If a SAX error occurs.
 	 */
@@ -98,7 +98,7 @@ public final class XmlParser {
 	}
 
 	/**
-	 * Initialises this parser.
+	 * Initialises this generator.
 	 */
 	private void init() {
 		xmlReader.setContentHandler(eventHandler);

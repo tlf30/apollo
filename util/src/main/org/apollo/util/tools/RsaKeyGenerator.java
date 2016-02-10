@@ -35,7 +35,8 @@ public final class RsaKeyGenerator {
 
 			modulus = p.multiply(q);
 			privateKey = publicKey.modInverse(phi);
-		} while (modulus.bitLength() != BIT_COUNT || privateKey.bitLength() != BIT_COUNT || !phi.gcd(publicKey).equals(BigInteger.ONE));
+		} while (modulus.bitLength() != BIT_COUNT || privateKey.bitLength() != BIT_COUNT ||
+			!phi.gcd(publicKey).equals(BigInteger.ONE));
 
 		System.out.println("modulus: " + modulus);
 		System.out.println("public key: " + publicKey);

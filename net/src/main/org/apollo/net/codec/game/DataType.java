@@ -1,5 +1,8 @@
 package org.apollo.net.codec.game;
 
+import java.util.Arrays;
+import java.util.Optional;
+
 /**
  * Represents the different simple data types.
  *
@@ -33,6 +36,16 @@ public enum DataType {
 	LONG(8);
 
 	/**
+	 * Attempts to find the DataType with the specified amount of bytes.
+	 *
+	 * @param bytes The amount of bytes of the DataType to find.
+	 * @return The {@link Optional} containing the DataType if found. Will never be {@code null}.
+	 */
+	public static Optional<DataType> valueOf(int bytes) {
+		return Arrays.stream(values()).filter(value -> value.bytes == bytes).findAny();
+	}
+
+	/**
 	 * The number of bytes this type occupies.
 	 */
 	private final int bytes;
@@ -42,7 +55,7 @@ public enum DataType {
 	 *
 	 * @param bytes The number of bytes it occupies.
 	 */
-	private DataType(int bytes) {
+	DataType(int bytes) {
 		this.bytes = bytes;
 	}
 

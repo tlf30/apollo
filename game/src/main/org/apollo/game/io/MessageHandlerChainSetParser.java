@@ -30,7 +30,7 @@ public final class MessageHandlerChainSetParser {
 	private final XmlParser parser = new XmlParser();
 
 	/**
-	 * Creates the message chain parser.
+	 * Creates the message chain generator.
 	 *
 	 * @param is The source {@link InputStream}.
 	 * @throws SAXException If a SAX error occurs.

@@ -28,12 +28,12 @@ public final class PluginMetaDataParser {
 	private final InputStream is;
 
 	/**
-	 * The XML parser.
+	 * The XML generator.
 	 */
 	private final XmlParser parser;
 
 	/**
-	 * Creates the plugin meta data parser.
+	 * Creates the plugin meta data generator.
 	 *
 	 * @param is The input stream.
 	 * @throws SAXException If a SAX error occurs.
