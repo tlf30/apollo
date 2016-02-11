@@ -23,6 +23,18 @@ public final class PluginMetaDataParser {
 	private static final XmlNode[] EMPTY_NODE_ARRAY = new XmlNode[0];
 
 	/**
+	 * Gets the specified child element, if it exists.
+	 *
+	 * @param node The root node.
+	 * @param name The element name.
+	 * @return The node object.
+	 * @throws IOException If the element does not exist.
+	 */
+	private static XmlNode getElement(XmlNode node, String name) throws IOException {
+		return Objects.requireNonNull(node.getChild(name), "No " + name + " element found.");
+	}
+
+	/**
 	 * The input stream.
 	 */
 	private final InputStream is;
@@ -33,7 +45,7 @@ public final class PluginMetaDataParser {
 	private final XmlParser parser;
 
 	/**
-	 * Creates the plugin meta data generator.
+	 * Creates the plugin meta data parser.
 	 *
 	 * @param is The input stream.
 	 * @throws SAXException If a SAX error occurs.
@@ -41,18 +53,6 @@ public final class PluginMetaDataParser {
 	public PluginMetaDataParser(InputStream is) throws SAXException {
 		this.is = is;
 		parser = new XmlParser();
-	}
-
-	/**
-	 * Gets the specified child element, if it exists.
-	 *
-	 * @param node The root node.
-	 * @param name The element name.
-	 * @return The node object.
-	 * @throws IOException If the element does not exist.
-	 */
-	private static XmlNode getElement(XmlNode node, String name) throws IOException {
-		return Objects.requireNonNull(node.getChild(name), "No " + name + " element found.");
 	}
 
 	/**

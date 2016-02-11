@@ -30,7 +30,7 @@ public final class MessageHandlerChainSetParser {
 	private final XmlParser parser = new XmlParser();
 
 	/**
-	 * Creates the message chain generator.
+	 * Creates the message chain parser.
 	 *
 	 * @param is The source {@link InputStream}.
 	 * @throws SAXException If a SAX error occurs.
@@ -88,7 +88,8 @@ public final class MessageHandlerChainSetParser {
 					throw new IOException("Handler node must have a value.");
 				}
 
-				Class<? extends MessageHandler<? extends Message>> handlerClass = (Class<? extends MessageHandler<? extends Message>>) Class.forName(handlerClassName);
+				Class<? extends MessageHandler<? extends Message>> handlerClass = (Class<? extends MessageHandler<? extends Message>>) Class
+					.forName(handlerClassName);
 				MessageHandler<? extends Message> handler = handlerClass.getConstructor(World.class).newInstance(world);
 				chainSet.putHandler(messageClass, handler);
 			}
