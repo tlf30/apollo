@@ -6,6 +6,7 @@ import org.apollo.game.model.entity.Player
 import org.apollo.game.model.entity.Skill
 import org.apollo.plugin.skills.fishing.*
 import kotlin.properties.Delegates
+import java.util.Random
 
 class FishingAction: DistancedAction<Player> {
 
