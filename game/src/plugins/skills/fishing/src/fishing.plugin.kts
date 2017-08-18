@@ -1,12 +1,11 @@
-
 import org.apollo.cache.def.ItemDefinition
 import org.apollo.game.action.DistancedAction
 import org.apollo.game.message.impl.NpcActionMessage
 import org.apollo.game.model.Position
 import org.apollo.game.model.entity.Player
 import org.apollo.game.model.entity.Skill
+import org.apollo.plugin.skills.fishing.*
 import kotlin.properties.Delegates
-
 
 class FishingAction: DistancedAction<Player> {
 

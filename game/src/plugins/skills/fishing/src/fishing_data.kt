@@ -1,3 +1,5 @@
+package org.apollo.plugin.skills.fishing
+
 import org.apollo.game.model.Animation
 import java.util.*
 
